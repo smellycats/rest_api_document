@@ -12,6 +12,10 @@
     <link href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>" rel="stylesheet">
     <link href="<?php echo base_url('bootstrap/css/docs.min.css'); ?>" rel="stylesheet">
 
+    <link href="<?php echo base_url('highlight/styles/github.css'); ?>" rel="stylesheet">
+
+    <link href="<?php echo base_url('font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -23,6 +27,9 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('bootstrap/js/docs.min.js'); ?>"></script>
+
+    <script src="<?php echo base_url('highlight/highlight.pack.js'); ?>"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
 
   <body>
@@ -42,7 +49,7 @@
       <nav id="bs-navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="active">
-            <a href="<?php echo site_url('cgs'); ?>">车管所</a>
+            <a href="<?php echo site_url('cgs'); ?>">车辆管理</a>
           </li>
           <li>
             <a href="<?php echo site_url('carrecg'); ?>">车型识别</a>
@@ -58,11 +65,26 @@
     </div>
     </header>
 
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content" tabindex="-1">
+      <div class="container">
+        <h1>车辆管理</h1>
+        <p>车辆号牌,型号,颜色,类型,所有人等车辆信息</p>
+        <p class="lead">
+          <a class="btn btn-outline-inverse btn-lg" href="https://github.com/smellycats/rest_cgs" role="button">
+            <i class="fa fa-github fa-lg"></i>
+            GitHub
+          </a>
+        </p>
+        <p style="font-size:14px;">Version 0.1.0 . Created by SmellyCat</p>
+      </div>
+    </div>
+
     <div class="container bs-docs-container">
       <div class="row">
         <div class="col-md-8" role="main">
           <div class="bs-docs-section">
-            <h1 id="cgs" class="page-header">车管所</h1>
+            <h1 id="cgs" class="page-header">车辆管理</h1>
 
               <h2 id="cgs-vehicle">Get vehicle</h2>
                 <div class="panel panel-default">
@@ -114,7 +136,7 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">Status: 200OK</div>
 
-<pre>
+<pre><code class="json">
 {
   "total_count": 1,
   "items": [
@@ -135,7 +157,7 @@
     }
   ]
 }
-</pre>
+</code></pre>
 
                     </div>
           </div>
@@ -145,12 +167,13 @@
           <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
             <ul class="nav bs-docs-sidenav">
               <li>
-                <a href="#cgs">车管所</a>
+                <a href="#cgs">车辆管理</a>
                 <ul class="nav">
                   <li><a href="#cgs-vehicle">Get vehicle</a></li>
                 </ul>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
 

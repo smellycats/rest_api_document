@@ -12,6 +12,10 @@
     <link href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>" rel="stylesheet">
     <link href="<?php echo base_url('bootstrap/css/docs.min.css'); ?>" rel="stylesheet">
 
+    <link href="<?php echo base_url('highlight/styles/github.css'); ?>" rel="stylesheet">
+
+    <link href="<?php echo base_url('font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -23,6 +27,9 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('bootstrap/js/docs.min.js'); ?>"></script>
+    
+    <script src="<?php echo base_url('highlight/highlight.pack.js'); ?>"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
 
   <body>
@@ -42,7 +49,7 @@
       <nav id="bs-navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a href="<?php echo site_url('cgs'); ?>">车管所</a>
+            <a href="<?php echo site_url('cgs'); ?>">车辆管理</a>
           </li>
           <li>
             <a href="<?php echo site_url('carrecg'); ?>">车型识别</a>
@@ -63,7 +70,13 @@
       <div class="container">
         <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">S</span>
         <p class="lead">实现科技 RESTful api 文档</p>
-        <p class="version">当前版本： <?php echo $this->config->item('version'); ?> | 文档更新于：2015-06-26</p>
+        <p class="lead">
+          <a class="btn btn-outline-inverse btn-lg" href="https://github.com/smellycats" role="button">
+            <i class="fa fa-github fa-lg"></i>
+            GitHub
+          </a>
+        </p>
+        <p class="version">Version <?php echo $this->config->item('version'); ?> . Created by SmellyCat</p>
       </div>
     </main>
 
