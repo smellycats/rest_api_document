@@ -12,6 +12,10 @@
     <link href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>" rel="stylesheet">
     <link href="<?php echo base_url('bootstrap/css/docs.min.css'); ?>" rel="stylesheet">
 
+    <link href="<?php echo base_url('highlight/styles/github.css'); ?>" rel="stylesheet">
+
+    <link href="<?php echo base_url('font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -23,6 +27,9 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('bootstrap/js/docs.min.js'); ?>"></script>
+
+    <script src="<?php echo base_url('highlight/highlight.pack.js'); ?>"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
 
   <body>
@@ -42,7 +49,7 @@
       <nav id="bs-navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a href="<?php echo site_url('cgs'); ?>">车管所</a>
+            <a href="<?php echo site_url('cgs'); ?>">车辆管理</a>
           </li>
           <li class="active">
             <a href="<?php echo site_url('carrecg'); ?>">车型识别</a>
@@ -58,6 +65,21 @@
     </div>
     </header>
 
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content" tabindex="-1">
+      <div class="container">
+        <h1>车型识别</h1>
+        <p>车辆品牌,车辆类型,车身颜色识别</p>
+        <p class="lead">
+          <a class="btn btn-outline-inverse btn-lg" href="https://github.com/sxtech/SX-CarRecgServer" role="button">
+            <i class="fa fa-github fa-lg"></i>
+            GitHub
+          </a>
+        </p>
+        <p style="font-size:14px;">Version 2.3.1 . Created by SmellyCat</p>
+      </div>
+    </div>
+
     <div class="container bs-docs-container">
       <div class="row">
         <div class="col-md-8" role="main">
@@ -68,31 +90,31 @@
                 <p><span class="label label-primary">1</span>服务器繁忙<p>
                   <div class="panel panel-default">
                     <div class="panel-heading">Status: 449 Retry With</div>
-<pre>
+<pre><code class="json">
 {
   "message": "Server is busy"
 }
-</pre>
+</code></pre>
                 </div>
 
                 <p><span class="label label-primary">2</span>等待超时(默认5s)<p>
                   <div class="panel panel-default">
                     <div class="panel-heading">Status: 408 Request Timeout</div>
-<pre>
+<pre><code class="json">
 {
   "message": "Timeout"
 }
-</pre>
+</code></pre>
                 </div>
 
                 <p><span class="label label-primary">3</span>URL 路径错误<p>
                   <div class="panel panel-default">
                     <div class="panel-heading">Status: 400 Bad Request</div>
-<pre>
+<pre><code class="json">
 {
   "message": "URL error"
 }
-</pre>
+</code></pre>
                 </div>
           </div>
 
@@ -133,7 +155,7 @@
                       </tr>
                   </table>
                 <h3 id="carrecg-create-input">Input</h3>
-<pre>
+<pre><code class="json">
 {
   "imgurl": "http://localhost/imgareaselect/imgs/1.jpg",
   "coord": [
@@ -143,11 +165,11 @@
     900
   ]
 }
-</pre>
+</code></pre>
                 <h3 id="carrecg-create-response">Response</h3>
                   <div class="panel panel-default">
                     <div class="panel-heading">Status: 201 Created</div>
-<pre>
+<pre><code class="json">
 {
   "imgurl": "http://localhost/imgareaselect/imgs/1.jpg",
   "coord": [
@@ -171,7 +193,7 @@
     }
   ]
 }
-</pre>
+</code></pre>
                   </div>
           </div>
         </div>
