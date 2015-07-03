@@ -61,15 +61,8 @@
     <!-- Docs page layout -->
     <div class="bs-docs-header" id="content" tabindex="-1">
       <div class="container">
-        <h1>车辆管理</h1>
-        <p>查询车辆管理信息</p>
-        <p class="lead">
-          <a class="btn btn-outline-inverse btn-lg" href="https://github.com/smellycats/rest_cgs" role="button">
-            <i class="fa fa-github fa-lg"></i>
-            GitHub
-          </a>
-        </p>
-        <p style="font-size:14px;">Version 0.1.0 . Created by SmellyCat</p>
+        <h1>概览</h1>
+        <p>这是一个RESTful API 的设计描述</p>
       </div>
     </div>
 
@@ -77,82 +70,62 @@
       <div class="row">
         <div class="col-md-8" role="main">
           <div class="bs-docs-section">
-            <h1 id="cgs" class="page-header">车辆管理</h1>
+            <h1 id="rest" class="page-header">REST API 规范</h1>
 
-              <h2 id="cgs-vehicle">Get vehicle</h2>
-                <div class="panel panel-default">
-                  <div class="panel-body">
-                    GET /cgs/vehicles
-                  </div>
-                </div>
-                <h3 id="cgs-vehicle-paramters">参数</h3>
-                  <table class="table table-bordered">
-                    <colgroup>
-                      <col class="col-xs-1">
-                      <col class="col-xs-1">
-                      <col class="col-xs-6">
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>名称</th>
-                        <th>类型</th>
-                        <th>描述</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>q</td>
-                        <td>string</td>
-                        <td>查询条件</td>
-                      </tr>
-                  </table>
-                  <p>请求参数<span class="label label-primary">q</span>可以是下列组合</p>
-                  <ul>
-                    <li>
-                      <span class="label label-info">hpys</span>根据号牌颜色查询车辆信息,内容可以是
-                      <span class="label label-default">blue</span>,<span class="label label-default">yellow</span>,<span class="label label-default">white</span>or<span class="label label-default">black</span>.
-                      以下是等价的参数
-                      <span class="label label-default">blue</span>=<span class="label label-default">蓝</span>=<span class="label label-default">2</span>,
-                      <span class="label label-default">yellow</span>=<span class="label label-default">黄</span>=<span class="label label-default">3</span>,
-                      <span class="label label-default">white</span>=<span class="label label-default">白</span>=<span class="label label-default">4</span>,
-                      <span class="label label-default">black</span>=<span class="label label-default">黑</span>=<span class="label label-default">5</span>.
-                    </li>
-                  </ul>
-                <h3 id="cgs-vehicle-example">实例</h3>
-                  假设你要查询车牌为粤L12345,号牌颜色为蓝的车辆信息
-                  <div class="panel panel-default">
-                    <div class="panel-body">
-                      https://127.0.0.1/rest_cgs/index.php/v2/cgs/vehicles?q=粤L12345+hpys:blue
-                    </div>
-                  </div>
+              <h2 id="rest-dc">HTTP动词</h2>
+                <table class="table table-bordered">
+                  <colgroup>
+                    <col class="col-xs-1">
+                    <col class="col-xs-7">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>动词</th>
+                      <th>描述</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>HEAD</td>
+                      <td>请求用于获取某个资源的元数据(metadata)–比如,该资源是否存在,该资源的内容长度是多少等等.</td>
+                    </tr>
+                    <tr>
+                      <td>GET</td>
+                      <td>获取资源（一项或多项）.</td>
+                    </tr>
+                    <tr>
+                      <td>POST</td>
+                      <td>创建资源.</td>
+                    </tr>
+                    <tr>
+                      <td>PATCH</td>
+                      <td>更新资源（客户端提供改变的属性）.</td>
+                    </tr>
+                    <tr>
+                      <td>PUT</td>
+                      <td>更新资源（客户端提供改变后的完整资源）.</td>
+                    </tr>
+                    <tr>
+                      <td>DELETE</td>
+                      <td>删除资源.</td>
+                    </tr>
+                </table>
 
-                    <div class="panel panel-default">
-                      <div class="panel-heading">Status: 200OK</div>
-
-<pre><code class="json">
-{
-  "total_count": 1,
-  "items": [
-    {
-      "id": 10,
-      "hpzl": 2,
-      "hphm": "粤L12345",
-      "clpp1": "本田",
-      "clpp2": "本田",
-      "clxh": "CC1234567",
-      "zzcmc": "本田汽车股份有限公司",
-      "clsbdh": "LGWEF123456789",
-      "fdjh": 1301234567,
-      "cllx": "K33",
-      "csys": "A",
-      "syr": "匿名",
-      "fzrq": "2013-11-18 12:34:56"
-    }
-  ]
-}
-</code></pre>
-
-                    </div>
+              <h2 id="rest-status">HTTP状态码</h2>
+                <p>服务器向用户返回的状态码和提示信息.</p>
+                <ul>
+                  <li>200 OK: 服务器成功返回用户请求的资源，该操作是幂等的。</li>
+                  <li>201 Created: 创建资源成功。</li>
+                  <li>202 Accepted: 表示一个请求已经进入后台队列（异步任务）。</li>
+                  <li>204 No Content: 删除资源成功。</li>
+                  <li>400 Bad Request: 用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。</li>
+                  <li>401 Unauthorized: 表示用户没有权限（令牌、用户名、密码错误）。</li>
+                  <li>403 Forbidden: 表示用户得到授权（与401错误相对），但是访问是被禁止的。</li>
+                  <li>404 Not Found: 用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。</li>
+                  <li>408 Request Timeout: 请求超时。 </li>
+                  <li>422 Unprocessable Entity: 请求格式正确，但是由于含有语义错误，无法响应。</li>
+                  <li>500 Internal Server Error: 服务器发生错误，用户将无法判断发出的请求是否成功。</li>
+                </ul>
           </div>
         </div>
 
@@ -160,9 +133,10 @@
           <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
             <ul class="nav bs-docs-sidenav">
               <li>
-                <a href="#cgs">车辆管理</a>
+                <a href="#rest">REST API 规范</a>
                 <ul class="nav">
-                  <li><a href="#cgs-vehicle">Get vehicle</a></li>
+                  <li><a href="#rest-dc">HTTP动词</a></li>
+                  <li><a href="#rest-status">HTTP状态码</a></li>
                 </ul>
               </li>
             </ul>
