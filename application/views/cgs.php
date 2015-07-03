@@ -48,18 +48,11 @@
       </div>
       <nav id="bs-navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active">
-            <a href="<?php echo site_url('cgs'); ?>">车辆管理</a>
-          </li>
+          <?php foreach($this->config->item('menu') as $row): ?>
           <li>
-            <a href="<?php echo site_url('carrecg'); ?>">车型识别</a>
+            <a href="<?php echo site_url($row['name']); ?>"><?php echo $row['cname']; ?></a>
           </li>
-          <li>
-            <a href="<?php echo site_url('imgpackage'); ?>">图片打包</a>
-          </li>
-          <li>
-            <a href="<?php echo site_url('kakou'); ?>">卡口</a>
-          </li>
+          <?php endforeach; ?>
         </ul>
       </nav>
     </div>
@@ -69,7 +62,7 @@
     <div class="bs-docs-header" id="content" tabindex="-1">
       <div class="container">
         <h1>车辆管理</h1>
-        <p>车辆号牌,型号,颜色,类型,所有人等车辆信息</p>
+        <p>查询车辆管理信息</p>
         <p class="lead">
           <a class="btn btn-outline-inverse btn-lg" href="https://github.com/smellycats/rest_cgs" role="button">
             <i class="fa fa-github fa-lg"></i>

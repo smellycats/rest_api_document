@@ -48,18 +48,11 @@
       </div>
       <nav id="bs-navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
+          <?php foreach($this->config->item('menu') as $row): ?>
           <li>
-            <a href="<?php echo site_url('cgs'); ?>">车辆管理</a>
+            <a href="<?php echo site_url($row['name']); ?>"><?php echo $row['cname']; ?></a>
           </li>
-          <li>
-            <a href="<?php echo site_url('carrecg'); ?>">车型识别</a>
-          </li>
-          <li class="active">
-            <a href="<?php echo site_url('imgpackage'); ?>">图片打包</a>
-          </li>
-          <li>
-            <a href="<?php echo site_url('kakou'); ?>">卡口</a>
-          </li>
+          <?php endforeach; ?>
         </ul>
       </nav>
     </div>
@@ -69,7 +62,7 @@
     <div class="bs-docs-header" id="content" tabindex="-1">
       <div class="container">
         <h1>图片打包</h1>
-        <p>图片批量压缩后下载</p>
+        <p>根据URL地址批量抓图压缩</p>
         <p class="lead">
           <a class="btn btn-outline-inverse btn-lg" href="https://github.com/sxtech/SX-UrlImgPackage" role="button">
             <i class="fa fa-github fa-lg"></i>
@@ -116,24 +109,24 @@
                   </table>
                 <h3 id="package-create-input">Input</h3>
                   <div>
-                    <pre><code class="json">
-                    {
-                      "urls": [
-                        "http://localhost/imgareaselect/imgs/1.jpg",
-                        "http://localhost/imgareaselect/imgs/2.jpg"
-                      ]
-                    }
-                    </code></pre>
+<pre><code class="json">
+{
+  "urls": [
+    "http://localhost/imgareaselect/imgs/1.jpg",
+    "http://localhost/imgareaselect/imgs/2.jpg"
+  ]
+}
+</code></pre>
                   </div>
                 <h3 id="package-create-response">Response</h3>
                   <div class="panel panel-default">
                     <div class="panel-heading">Status: 201 Created</div>
                       <div>
-                        <pre><code class="json">
-                        {
-                          "package": "0186c3b12fb9aa935c42586d371cca48.zip"
-                        }
-                        </code></pre>
+<pre><code class="json">
+{
+  "package": "0186c3b12fb9aa935c42586d371cca48.zip"
+}
+</code></pre>
                       </div>
                   </div>
           </div>
