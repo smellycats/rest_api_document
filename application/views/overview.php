@@ -124,6 +124,7 @@
                   <li>404 Not Found: 用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。</li>
                   <li>408 Request Timeout: 请求超时。 </li>
                   <li>422 Unprocessable Entity: 请求格式正确，但是由于含有语义错误，无法响应。</li>
+                  <li>449 Rety With: 服务器繁忙，稍候再请求。</li>
                   <li>500 Internal Server Error: 服务器发生错误，用户将无法判断发出的请求是否成功。</li>
                 </ul>
           </div>
