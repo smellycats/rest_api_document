@@ -64,12 +64,12 @@
         <h1>车型识别</h1>
         <p>车辆品牌,车辆类型,车身颜色识别</p>
         <p class="lead">
-          <a class="btn btn-outline-inverse btn-lg" href="https://github.com/sxtech/SX-CarRecgServer" role="button">
+          <a class="btn btn-outline-inverse btn-lg" href="https://github.com/smellycats/SX-CarRecgServer" role="button">
             <i class="fa fa-github fa-lg"></i>
             GitHub
           </a>
         </p>
-        <p style="font-size:14px;">Version 2.3.1 . Created by SmellyCat</p>
+        <p style="font-size:14px;">Version 2.4.0 . Created by SmellyCat</p>
       </div>
     </div>
 
@@ -106,6 +106,16 @@
 <pre><code class="json">
 {
   "message": "URL error"
+}
+</code></pre>
+                </div>
+
+                <p><span class="label label-primary">4</span>上传文件错误<p>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 400 Bad Request</div>
+<pre><code class="json">
+{
+  "message": "File error"
 }
 </code></pre>
                 </div>
@@ -188,6 +198,59 @@
 }
 </code></pre>
                   </div>
+
+              <h2 id="uploadrecg-create">Create a uploadrecg</h2>
+                <p>上传图片文件获取识别信息.需要Basic Auth权限认证.</p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    POST /v1/uploadrecg
+                  </div>
+                </div>
+                <h3 id="uploadrecg-create-parameters">Parameters</h3>
+                  <table class="table table-bordered">
+                    <colgroup>
+                      <col class="col-xs-1">
+                      <col class="col-xs-1">
+                      <col class="col-xs-6">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>file</td>
+                        <td>file</td>
+                        <td>上传文件，目前只支持.jpg</td>
+                      </tr>
+                  </table>
+
+                <h3 id="carrecg-create-response">Response</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 201 Created</div>
+<pre><code class="json">
+{
+  "coord": [], 
+  "recginfo": [
+    {
+      "ywhp": 1,
+      "jcsj": "2015-06-26 13:48:50",
+      "ppdm": "010",
+      "clpp": "本田CRV-1",
+      "kxd": 89,
+      "ywcl": 1,
+      "hpzl": "02",
+      "csys": "J",
+      "cllx": "K32",
+      "hphm": "粤L12345"
+    }
+  ]
+}
+</code></pre>
+                  </div>
           </div>
         </div>
 
@@ -204,6 +267,7 @@
                 <a href="#carrecg">车型识别</a>
                 <ul class="nav">
                   <li><a href="#carrecg-create">Create a carrecg</a></li>
+                  <li><a href="#uploadrecg-create">Create a uploadrecg</a></li>
                 </ul>
               </li>
             </ul>
