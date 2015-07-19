@@ -1102,6 +1102,106 @@
 </code></pre>
                   </div>
 
+              <h2 id="kakou-logo-fxbh">List fxbh</h2>
+                <p>获取方向编号<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/fxbh
+                  </div>
+                </div>
+                <h3 id="kakou-logo-fxbh-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/fxbh
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "total_count": 7,
+  "items": [
+    {
+      "id": 1,
+      "name": "其他"
+    },
+    {
+      "id": 2,
+      "name": "进城"
+    },
+    {
+      "id": 3,
+      "name": "出城"
+    },
+    {
+      "id": 4,
+      "name": "由东往西"
+    },
+    {
+      "id": 5,
+      "name": "由南往北"
+    },
+    {
+      "id": 6,
+      "name": "由西往东"
+    },
+    {
+      "id": 7,
+      "name": "由北往南"
+    }
+  ]
+}
+</code></pre>
+                  </div>
+
+              <h2 id="kakou-logo-place">List place</h2>
+                <p>获取车辆类型列表<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/place
+                  </div>
+                </div>
+                <h3 id="kakou-logo-place-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/place
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "total_count": 4,
+  "items": [
+    {
+      "id": 2,
+      "name": "淡水海关卡口",
+      "config_id": 2,
+      "kkbh": null
+    },
+    {
+      "id": 3,
+      "name": "新圩塘吓卡口",
+      "config_id": 13,
+      "kkbh": null
+    },
+    {
+      "id": 4,
+      "name": "镇隆大路背卡口",
+      "config_id": 14,
+      "kkbh": null
+    },
+    {
+      "id": 5,
+      "name": "淡水人民桥",
+      "config_id": 15,
+      "kkbh": null
+    }
+  ]
+}
+</code></pre>
+                  </div>
+
               <h2 id="kakou-logo-carinfo">Get carinfo</h2>
                 <p>获取车辆信息<p>
                 <div class="panel panel-default">
@@ -1143,6 +1243,106 @@
 }
 </code></pre>
                   </div>
+
+              <h2 id="kakou-logo-fresh">Get fresh</h2>
+                <p>获取最新车辆信息<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/fresh
+                  </div>
+                </div>
+                <h3 id="kakou-logo-fresh-parameters">parameters</h3>
+                  <table class="table table-bordered">
+                    <colgroup>
+                      <col class="col-xs-1">
+                      <col class="col-xs-1">
+                      <col class="col-xs-6">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>描述</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>q</td>
+                        <td>string</td>
+                        <td>查询条件，第一个参数为用户id</td>
+                      </tr>
+                  </table>
+                  <p>请求参数<span class="label label-primary">q</span>可以是下列组合</p>
+                  <ul>
+                    <li>
+                      <span class="label label-info">place</span>卡口地点id,内容是整形数值.
+                    </li>
+                    <li>
+                      <span class="label label-info">fxbh</span>方向id,内容是整形数值.
+                    </li>
+                  </ul>
+                <h3 id="kakou-logo-fresh-example">example</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/fresh?q=1+place:4+fxbh:2
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "total_count": 2,
+  "items": [
+    {
+      "id": "13367202",
+      "jgsj": "2015-05-26 23:18:58",
+      "hphm": "-",
+      "cltx_id": "188848374",
+      "cdbh": "2",
+      "ppdm": "999",
+      "ppdm2": "999999",
+      "kxd": "0",
+      "clpp": "其他",
+      "place_id": "4",
+      "place": "镇隆大路背卡口",
+      "hpys_id": "1",
+      "hpys": "其他",
+      "cllx_code": "Q",
+      "cllx": "其他",
+      "fxbh_id": "2",
+      "fxbh": "进城",
+      "hpzl_code": "99",
+      "csys_code": "Z",
+      "csys": "其他",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185800029.jpg"
+    },
+    {
+      "id": "13367201",
+      "jgsj": "2015-05-26 23:18:57",
+      "hphm": "粤L12345",
+      "cltx_id": "188848373",
+      "cdbh": "2",
+      "ppdm": "010",
+      "ppdm2": "010014",
+      "kxd": "67",
+      "clpp": "本田CRV-5",
+      "place_id": "4",
+      "place": "镇隆大路背卡口",
+      "hpys_id": "1",
+      "hpys": "其他",
+      "cllx_code": "Q",
+      "cllx": "其他",
+      "fxbh_id": "2",
+      "fxbh": "进城",
+      "hpzl_code": "99",
+      "csys_code": "Z",
+      "csys": "其他",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185700028.jpg"
+    }
+  ]
+}
+</code></pre>
+                  </div>
           </div>
         </div>
 
@@ -1156,7 +1356,10 @@
                   <li><a href="#kakou-logo-hpzl">List hpzl</a></li>
                   <li><a href="#kakou-logo-csys">List csys</a></li>
                   <li><a href="#kakou-logo-cllx">List cllx</a></li>
+                  <li><a href="#kakou-logo-fxbh">List fxbh</a></li>
+                  <li><a href="#kakou-logo-place">List place</a></li>
                   <li><a href="#kakou-logo-carinfo">Get carinfo</a></li>
+                  <li><a href="#kakou-logo-fresh">Get fresh</a></li>
                 </ul>
               </li>
             </ul>
