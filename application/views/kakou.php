@@ -343,7 +343,7 @@
                   </div>
 
               <h2 id="kakou-logo-place">List place</h2>
-                <p>获取车辆类型列表<p>
+                <p>获取卡口地点列表<p>
                 <div class="panel panel-default">
                   <div class="panel-body">
                     GET /logo/place
