@@ -509,6 +509,186 @@
 </code></pre>
                   </div>
 
+              <h2 id="kakou-logo-carinfos">List carinfos</h2>
+                <p>根据条件获取车辆信息<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/carinfos/q={query}{&page,per_page,sort,order}
+                  </div>
+                </div>
+                <h3 id="kakou-logo-fresh-parameters">parameters</h3>
+                  <table class="table table-bordered">
+                    <colgroup>
+                      <col class="col-xs-1">
+                      <col class="col-xs-1">
+                      <col class="col-xs-6">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>描述</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>q</td>
+                        <td>string</td>
+                        <td>查询条件，第一个参数车牌号码</td>
+                      </tr>
+                      <tr>
+                        <td>page</td>
+                        <td>int</td>
+                        <td>页数.大于0的正整数.</td>
+                      </tr>
+                      <tr>
+                        <td>per_page</td>
+                        <td>int</td>
+                        <td>每页行数.默认值20.</td>
+                      </tr>
+                      <tr>
+                        <td>sort</td>
+                        <td>string</td>
+                        <td>排序字段.id,ppdm,jgsj中的一个，默认值是id</td>
+                      </tr>
+                      <tr>
+                        <td>order</td>
+                        <td>string</td>
+                        <td>排序方向，条件是sort已经设置.asc or desc,默认值desc</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>请求参数<span class="label label-primary">q</span>可以是下列组合</p>
+                  <ul>
+                    <li>
+                      <span class="label label-info">place</span>卡口地点id,内容是整形数值.
+                    </li>
+                    <li>
+                      <span class="label label-info">fxbh</span>方向id,内容是整形数值.
+                    </li>
+                    <li>
+                      <span class="label label-info">ppdm</span>品牌代码,例如：031 or 031001.
+                    </li>
+                    <li>
+                      <span class="label label-info">hpys</span>根据号牌颜色查询车辆信息,内容可以是
+                      <span class="label label-default">blue</span>,<span class="label label-default">yellow</span>,<span class="label label-default">white</span>or<span class="label label-default">black</span>.
+                      以下是等价的参数
+                      <span class="label label-default">other</span>=<span class="label label-default">其他</span>=<span class="label label-default">1</span>,
+                      <span class="label label-default">blue</span>=<span class="label label-default">蓝</span>=<span class="label label-default">2</span>,
+                      <span class="label label-default">yellow</span>=<span class="label label-default">黄</span>=<span class="label label-default">3</span>,
+                      <span class="label label-default">white</span>=<span class="label label-default">白</span>=<span class="label label-default">4</span>,
+                      <span class="label label-default">black</span>=<span class="label label-default">黑</span>=<span class="label label-default">5</span>.
+                    </li>
+                  </ul>
+                <h3 id="kakou-logo-carinfos-example">example</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=粤LD%+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+place:4+fxbh:2+hpys:blue+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "total_count": 4,
+  "items": [
+    {
+      "id": "13363659",
+      "jgsj": "2015-05-26 23:19:23",
+      "hphm": "粤LDF127",
+      "cltx_id": "188848398",
+      "cdbh": "2",
+      "ppdm": "114",
+      "ppdm2": "114003",
+      "kxd": "65",
+      "clpp": "五菱",
+      "place_id": "4",
+      "place": "镇隆大路背卡口",
+      "hpys_id": "2",
+      "hpys": "蓝牌",
+      "cllx_code": "K31",
+      "cllx": "小型普通客车",
+      "fxbh_id": "2",
+      "fxbh": "进城",
+      "hpzl_code": "02",
+      "csys_code": "A",
+      "csys": "白",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg"
+    },
+    {
+      "id": "13366038",
+      "jgsj": "2015-05-26 23:19:23",
+      "hphm": "粤LDF127",
+      "cltx_id": "188848398",
+      "cdbh": "2",
+      "ppdm": "114",
+      "ppdm2": "114003",
+      "kxd": "65",
+      "clpp": "五菱",
+      "place_id": "4",
+      "place": "镇隆大路背卡口",
+      "hpys_id": "2",
+      "hpys": "蓝牌",
+      "cllx_code": "K31",
+      "cllx": "小型普通客车",
+      "fxbh_id": "2",
+      "fxbh": "进城",
+      "hpzl_code": "02",
+      "csys_code": "A",
+      "csys": "白",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg"
+    },
+    {
+      "id": "13364469",
+      "jgsj": "2015-05-26 23:43:45",
+      "hphm": "粤LD9402",
+      "cltx_id": "188849276",
+      "cdbh": "2",
+      "ppdm": "114",
+      "ppdm2": "114003",
+      "kxd": "69",
+      "clpp": "五菱",
+      "place_id": "4",
+      "place": "镇隆大路背卡口",
+      "hpys_id": "2",
+      "hpys": "蓝牌",
+      "cllx_code": "K31",
+      "cllx": "小型普通客车",
+      "fxbh_id": "2",
+      "fxbh": "进城",
+      "hpzl_code": "02",
+      "csys_code": "A",
+      "csys": "白",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg"
+    },
+    {
+      "id": "13366848",
+      "jgsj": "2015-05-26 23:43:45",
+      "hphm": "粤LD9402",
+      "cltx_id": "188849276",
+      "cdbh": "2",
+      "ppdm": "114",
+      "ppdm2": "114003",
+      "kxd": "69",
+      "clpp": "五菱",
+      "place_id": "4",
+      "place": "镇隆大路背卡口",
+      "hpys_id": "2",
+      "hpys": "蓝牌",
+      "cllx_code": "K31",
+      "cllx": "小型普通客车",
+      "fxbh_id": "2",
+      "fxbh": "进城",
+      "hpzl_code": "02",
+      "csys_code": "A",
+      "csys": "白",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg"
+    }
+  ]
+}
+</code></pre>
+                  </div>
+
               <h2 id="kakou-logo-fresh">Get fresh</h2>
                 <p>获取实时车辆信息<p>
                 <div class="panel panel-default">
@@ -626,6 +806,7 @@
                   <li><a href="#kakou-logo-ppdm">List ppdm</a></li>
                   <li><a href="#kakou-logo-ppdm2">Get ppdm</a></li>
                   <li><a href="#kakou-logo-carinfo">Get carinfo</a></li>
+                  <li><a href="#kakou-logo-carinfos">List carinfos</a></li>
                   <li><a href="#kakou-logo-fresh">Get fresh</a></li>
                 </ul>
               </li>
