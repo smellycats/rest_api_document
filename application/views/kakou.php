@@ -542,22 +542,22 @@
                       <tr>
                         <td>page</td>
                         <td>int</td>
-                        <td>页数. 大于等于1或自然数.</td>
+                        <td>页数. 大于等于1整数, 默认值1.</td>
                       </tr>
                       <tr>
                         <td>per_page</td>
                         <td>int</td>
-                        <td>每页行数. 大于等于0正整数, 默认值20.</td>
+                        <td>每页行数. 正整数, 默认值20.</td>
                       </tr>
                       <tr>
                         <td>sort</td>
                         <td>string</td>
-                        <td>排序字段. id, ppdm, jgsj中的一个，默认值是id.</td>
+                        <td>排序字段. <code>id</code>, <code>ppdm</code>, <code>jgsj</code>中的一个，默认值是<code>id</code>.</td>
                       </tr>
                       <tr>
                         <td>order</td>
                         <td>string</td>
-                        <td>排序方向,条件是sort已经设置. asc or desc, 默认值desc.</td>
+                        <td>排序方向,条件是sort已经设置. <code>asc</code> or <code>desc</code>, 默认值<code>desc</code>.</td>
                       </tr>
                     </tbody>
                   </table>
@@ -580,13 +580,13 @@
                     </li>
                     <li>
                       <span class="label label-info">hpys</span>根据号牌颜色查询车辆信息,内容可以是
-                      <span class="label label-default">other</span>, <span class="label label-default">blue</span>, <span class="label label-default">yellow</span>, <span class="label label-default">white</span>or<span class="label label-default">black</span>.
+                      <code>other</code>, <code>blue</code>, <code>yellow</code>, <code>white</code> or <code>black</code>.
                       以下是等价的参数
-                      <span class="label label-default">other</span>=<span class="label label-default">其他</span>=<span class="label label-default">1</span>,
-                      <span class="label label-default">blue</span>=<span class="label label-default">蓝</span>=<span class="label label-default">2</span>,
-                      <span class="label label-default">yellow</span>=<span class="label label-default">黄</span>=<span class="label label-default">3</span>,
-                      <span class="label label-default">white</span>=<span class="label label-default">白</span>=<span class="label label-default">4</span>,
-                      <span class="label label-default">black</span>=<span class="label label-default">黑</span>=<span class="label label-default">5</span>.
+                      <code>other</code>=<code>其他</code>=<code>1</code>,
+                      <code>blue</code>=<code>蓝</code>=<code>2</code>,
+                      <code>yellow</code>=<code>黄</code>=<code>3</code>,
+                      <code>white</code>=<code>白</code>=<code>4</code>,
+                      <code>black</code>=<code>黑</code>=<code>5</code>.
                     </li>
                   </ul>
                 <h3 id="kakou-logo-carinfos-example">example</h3>
