@@ -534,32 +534,41 @@
                       <tr>
                         <td>q</td>
                         <td>string</td>
-                        <td>查询条件，第一个参数车牌号码</td>
+                        <td>查询条件, 第一个参数车牌号码。如果没有号牌号码则留空，例如：
+                        http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+place:4+fxbh:2+hpys:blue+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
+                        或 http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=null
+                      </td>
                       </tr>
                       <tr>
                         <td>page</td>
                         <td>int</td>
-                        <td>页数.大于0的正整数.</td>
+                        <td>页数. 大于等于1或自然数.</td>
                       </tr>
                       <tr>
                         <td>per_page</td>
                         <td>int</td>
-                        <td>每页行数.默认值20.</td>
+                        <td>每页行数. 大于等于0正整数, 默认值20.</td>
                       </tr>
                       <tr>
                         <td>sort</td>
                         <td>string</td>
-                        <td>排序字段.id,ppdm,jgsj中的一个，默认值是id</td>
+                        <td>排序字段. id, ppdm, jgsj中的一个，默认值是id.</td>
                       </tr>
                       <tr>
                         <td>order</td>
                         <td>string</td>
-                        <td>排序方向，条件是sort已经设置.asc or desc,默认值desc</td>
+                        <td>排序方向,条件是sort已经设置. asc or desc, 默认值desc.</td>
                       </tr>
                     </tbody>
                   </table>
                   <p>请求参数<span class="label label-primary">q</span>可以是下列组合</p>
                   <ul>
+                    <li>
+                      <span class="label label-info">st</span>开始时间, 格式为yyyy-mm-dd hh:mm:ss.
+                    </li>
+                    <li>
+                      <span class="label label-info">et</span>结束时间, 格式为yyyy-mm-dd hh:mm:ss.
+                    </li>   
                     <li>
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
                     </li>
@@ -571,7 +580,7 @@
                     </li>
                     <li>
                       <span class="label label-info">hpys</span>根据号牌颜色查询车辆信息,内容可以是
-                      <span class="label label-default">blue</span>,<span class="label label-default">yellow</span>,<span class="label label-default">white</span>or<span class="label label-default">black</span>.
+                      <span class="label label-default">other</span>, <span class="label label-default">blue</span>, <span class="label label-default">yellow</span>, <span class="label label-default">white</span>or<span class="label label-default">black</span>.
                       以下是等价的参数
                       <span class="label label-default">other</span>=<span class="label label-default">其他</span>=<span class="label label-default">1</span>,
                       <span class="label label-default">blue</span>=<span class="label label-default">蓝</span>=<span class="label label-default">2</span>,
