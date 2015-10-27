@@ -404,6 +404,20 @@
 </code></pre>
                   </div>
 
+              <h2 id="kakou-logo-kkdd">List kkdd</h2>
+                <p>获取卡口地点列表(同List place)<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/kkdd
+                  </div>
+                </div>
+                <h3 id="kakou-logo-kkdd-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/kkdd
+                    </div>
+                  </div>
+
               <h2 id="kakou-logo-ppdm">List ppdm</h2>
                 <p>获取品牌代码列表<p>
                 <div class="panel panel-default">
@@ -514,10 +528,12 @@
   "cllx": "小型普通客车",
   "fxbh_id": "3",
   "fxbh": "出城",
-  "hpzl_code": "7",
+  "hpzl_code": "02",
   "csys_code": "B",
   "csys": "灰",
-  "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400099.jpg"
+  "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400099.jpg",
+  "kkdd_id": 1,
+  "kkdd": "其他"
 }
 </code></pre>
                   </div>
@@ -635,7 +651,9 @@
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg"
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg",
+      "kkdd_id": 4,
+      "kkdd": "镇隆大路背卡口"
     },
     {
       "id": "13366038",
@@ -658,7 +676,9 @@
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg"
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg",
+      "kkdd_id": 4,
+      "kkdd": "镇隆大路背卡口"
     },
     {
       "id": "13364469",
@@ -681,7 +701,9 @@
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg"
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg",
+      "kkdd_id": 4,
+      "kkdd": "镇隆大路背卡口"
     },
     {
       "id": "13366848",
@@ -704,7 +726,9 @@
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg"
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg",
+      "kkdd_id": 4,
+      "kkdd": "镇隆大路背卡口"
     }
   ]
 }
@@ -781,7 +805,9 @@
       "hpzl_code": "99",
       "csys_code": "Z",
       "csys": "其他",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185800029.jpg"
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185800029.jpg",
+      "kkdd_id": 4,
+      "kkdd": "镇隆大路背卡口"
     },
     {
       "id": "13367201",
@@ -804,7 +830,9 @@
       "hpzl_code": "99",
       "csys_code": "Z",
       "csys": "其他",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185700028.jpg"
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185700028.jpg",
+      "kkdd_id": 4,
+      "kkdd": "镇隆大路背卡口"
     }
   ]
 }
@@ -825,6 +853,7 @@
                   <li><a href="#kakou-logo-cllx">List cllx</a></li>
                   <li><a href="#kakou-logo-fxbh">List fxbh</a></li>
                   <li><a href="#kakou-logo-place">List place</a></li>
+                  <li><a href="#kakou-logo-kkdd">List kkdd</a></li>
                   <li><a href="#kakou-logo-ppdm">List ppdm</a></li>
                   <li><a href="#kakou-logo-ppdm2">Get ppdm</a></li>
                   <li><a href="#kakou-logo-carinfo">Get carinfo</a></li>
