@@ -100,22 +100,27 @@
   "items": [
     {
       "id": 1,
+      "code": "QT",
       "name": "其他"
     },
     {
       "id": 2,
+      "code": "BU",
       "name": "蓝牌"
     },
     {
       "id": 3,
+      "code": "YL",
       "name": "黄牌"
     },
     {
       "id": 4,
+      "code": "WT",
       "name": "白牌"
     },
     {
       "id": 5,
+      "code": "BK",
       "name": "黑牌"
     }
   ]
@@ -307,37 +312,45 @@
                     <div class="panel-heading">Status: 200 OK</div>
 <pre><code class="json">
 {
-  "total_count": 7,
-  "items": [
-    {
-      "id": 1,
-      "name": "其他"
-    },
-    {
-      "id": 2,
-      "name": "进城"
-    },
-    {
-      "id": 3,
-      "name": "出城"
-    },
-    {
-      "id": 4,
-      "name": "由东往西"
-    },
-    {
-      "id": 5,
-      "name": "由南往北"
-    },
-    {
-      "id": 6,
-      "name": "由西往东"
-    },
-    {
-      "id": 7,
-      "name": "由北往南"
-    }
-  ]
+    "total_count": 7,
+    "items":
+    [
+        {
+            "id": 1,
+            "code": "QT",
+            "name": "其他"
+        },
+        {
+            "id": 2,
+            "code": "IN",
+            "name": "进城"
+        },
+        {
+            "id": 3,
+            "code": "OT",
+            "name": "出城"
+        },
+        {
+            "id": 4,
+            "code": "EW",
+            "name": "由东往西"
+        },
+        {
+            "id": 5,
+            "code": "SN",
+            "name": "由南往北"
+        },
+        {
+            "id": 6,
+            "code": "WE",
+            "name": "由西往东"
+        },
+        {
+            "id": 7,
+            "code": "NS",
+            "name": "由北往南"
+        }
+    ]
 }
 </code></pre>
                   </div>
@@ -434,7 +447,7 @@
                 <p>获取子品牌代码列表<p>
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    GET /logo/ppdm/{code}
+                    GET /logo/ppdm/:code
                   </div>
                 </div>
                 <h3 id="kakou-logo-ppdm2-example">实例</h3>
@@ -471,7 +484,7 @@
                 <p>获取车辆信息<p>
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    GET /logo/carinfo/{id}
+                    GET /logo/carinfo/:id
                   </div>
                 </div>
                 <h3 id="kakou-logo-carinfo-example">实例</h3>
@@ -513,7 +526,7 @@
                 <p>根据条件获取车辆信息<p>
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    GET /logo/carinfos/q={query}{&page,per_page,sort,order}
+                    GET /logo/carinfos
                   </div>
                 </div>
                 <h3 id="kakou-logo-fresh-parameters">parameters</h3>
