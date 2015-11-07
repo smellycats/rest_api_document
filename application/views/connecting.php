@@ -83,7 +83,7 @@
                 <p>发送ping请求获取连接状态，需要摘要式身份认证<p>
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    GET /v1/ping{/addr}
+                    GET /v1/ping/:addr
                   </div>
                 </div>
                 <h3 id="connecting-ping-example">实例</h3>
