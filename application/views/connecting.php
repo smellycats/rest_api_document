@@ -77,7 +77,7 @@
       <div class="row">
         <div class="col-md-8" role="main">
           <div class="bs-docs-section">
-            <h1 id="connecting" class="page-header">车辆管理</h1>
+            <h1 id="connecting" class="page-header">连接测试</h1>
 
               <h2 id="connecting-ping">Get ping</h2>
                 <p>发送ping请求获取连接状态，需要摘要式身份认证<p>
