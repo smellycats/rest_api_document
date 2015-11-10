@@ -533,6 +533,7 @@
   "hpzl_code": "02",
   "csys_code": "B",
   "csys": "灰",
+  "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=6",
   "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400099.jpg",
   "kkdd_id": 1,
   "kkdd": "其他"
@@ -655,6 +656,7 @@
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13363659",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg",
       "kkdd_id": 4,
       "kkdd": "镇隆大路背卡口"
@@ -682,6 +684,7 @@
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13366038",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg",
       "kkdd_id": 4,
       "kkdd": "镇隆大路背卡口"
@@ -709,6 +712,7 @@
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13364469",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg",
       "kkdd_id": 4,
       "kkdd": "镇隆大路背卡口"
@@ -736,6 +740,7 @@
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13366848",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg",
       "kkdd_id": 4,
       "kkdd": "镇隆大路背卡口"
@@ -817,6 +822,7 @@
       "hpzl_code": "99",
       "csys_code": "Z",
       "csys": "其他",
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13367202",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185800029.jpg",
       "kkdd_id": 4,
       "kkdd": "镇隆大路背卡口"
@@ -844,6 +850,7 @@
       "hpzl_code": "99",
       "csys_code": "Z",
       "csys": "其他",
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13367201",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185700028.jpg",
       "kkdd_id": 4,
       "kkdd": "镇隆大路背卡口"
