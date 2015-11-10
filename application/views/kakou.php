@@ -605,7 +605,7 @@
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
                     </li>
                     <li>
-                      <span class="label label-info">fxbh</span>方向id,内容是整形数值.
+                      <span class="label label-info">fxbh</span>方向,可以是fxbh_id如“2”表示“进城”，也可以使用fxbh_code如“IN”.
                     </li>
                     <li>
                       <span class="label label-info">ppdm</span>品牌代码,例如：031 or 031001.
@@ -614,11 +614,11 @@
                       <span class="label label-info">hpys</span>根据号牌颜色查询车辆信息,内容可以是
                       <code>other</code>, <code>blue</code>, <code>yellow</code>, <code>white</code> or <code>black</code>.
                       以下是等价的参数
-                      <code>other</code>=<code>其他</code>=<code>1</code>,
-                      <code>blue</code>=<code>蓝</code>=<code>2</code>,
-                      <code>yellow</code>=<code>黄</code>=<code>3</code>,
-                      <code>white</code>=<code>白</code>=<code>4</code>,
-                      <code>black</code>=<code>黑</code>=<code>5</code>.
+                      <code>other</code>=<code>其他</code>=<code>1</code>=<code>QT</code>,
+                      <code>blue</code>=<code>蓝</code>=<code>2</code>=<code>BU</code>,
+                      <code>yellow</code>=<code>黄</code>=<code>3</code>=<code>YL</code>,
+                      <code>white</code>=<code>白</code>=<code>4</code>=<code>WT</code>,
+                      <code>black</code>=<code>黑</code>=<code>5</code>=<code>BK</code>.
                     </li>
                   </ul>
                 <h3 id="kakou-logo-carinfos-example">example</h3>
@@ -784,7 +784,7 @@
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
                     </li>
                     <li>
-                      <span class="label label-info">fxbh</span>方向id,内容是整形数值.
+                      <span class="label label-info">fxbh</span>方向,可以是fxbh_id如“2”表示“进城”，也可以使用fxbh_code如“IN”.
                     </li>
                   </ul>
                 <h3 id="kakou-logo-fresh-example">example</h3>
