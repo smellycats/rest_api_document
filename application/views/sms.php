@@ -61,10 +61,10 @@
     <!-- Docs page layout -->
     <div class="bs-docs-header" id="content" tabindex="-1">
       <div class="container">
-        <h1>连接测试</h1>
-        <p>IP地址链接测试</p>
+        <h1>短信服务</h1>
+        <p>短信发送服务</p>
         <p class="lead">
-          <a class="btn btn-outline-inverse btn-lg" href="https://github.com/smellycats/SX-connecting" role="button">
+          <a class="btn btn-outline-inverse btn-lg" href="https://github.com/smellycats/SX-SMSServer" role="button">
             <i class="fa fa-github fa-lg"></i>
             GitHub
           </a>
@@ -77,29 +77,77 @@
       <div class="row">
         <div class="col-md-8" role="main">
           <div class="bs-docs-section">
-            <h1 id="connecting" class="page-header">连接测试</h1>
+            <h1 id="sms" class="page-header">短信服务</h1>
 
-              <h2 id="connecting-ping">Get ping</h2>
-                <p>发送ping请求获取连接状态，需要摘要式身份认证<p>
+              <h2 id="sms-sms">Create a sms</h2>
+                <p>发送短信<p>
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    GET /v1/ping/:addr
+                    POST /sms
                   </div>
                 </div>
-                <h3 id="connecting-ping-example">实例</h3>
-                  <div class="panel panel-default">
-                    <div class="panel-body">
-                      http://127.0.0.1:8078/v1/ping/127.0.0.1
-                    </div>
-                  </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Status: 200 OK</div>
+                <h3 id="package-create-parameters">Parameters</h3>
+                  <table class="table table-bordered">
+                    <colgroup>
+                      <col class="col-xs-1">
+                      <col class="col-xs-1">
+                      <col class="col-xs-6">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>mobiles</td>
+                        <td>array of string</td>
+                        <td>要发送的手机号码.</td>
+                      </tr>
+                      <tr>
+                        <td>content</td>
+                        <td>string</td>
+                        <td>发送内容.</td>
+                      </tr>
+                      <tr>
+                        <td>smid</td>
+                        <td>boolean</td>
+                        <td>True表示发送id递增，有回执的短信，反之亦然.</td>
+                      </tr>
+                  </table>
+                <h3 id="package-create-input">Input</h3>
+                  <div>
 <pre><code class="json">
 {
-    "addr": "127.0.0.1",
-    "connect": true
+  "mobiles": [
+    "10086",
+    "709394"
+  ],
+  "content": "短信测试",
+  "smid": True
 }
 </code></pre>
+                  </div>
+                <h3 id="package-create-response">Response</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 201 Created</div>
+                      <div>
+<pre><code class="json">
+{
+  "id": 8,
+  "mobiles": [
+    "10086",
+    "709394"
+  ],
+  "date_send": "2015-11-01 12:34:56",
+  "content": "短信测试",
+  "user_id": 2,
+  "returned_value": 0
+}
+</code></pre>
+                      </div>
                   </div>
           </div>
         </div>
@@ -108,9 +156,9 @@
           <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
             <ul class="nav bs-docs-sidenav">
               <li>
-                <a href="#connecting">连接测试</a>
+                <a href="#sms">短信服务</a>
                 <ul class="nav">
-                  <li><a href="#connecting-ping">Get ping</a></li>
+                  <li><a href="#sms-sms">Create a sms</a></li>
                 </ul>
               </li>
             </ul>

@@ -100,24 +100,20 @@
   "items": [
     {
       "id": 1,
+      "code": "QT",
       "name": "其他"
     },
     {
       "id": 2,
+      "code": "BU",
       "name": "蓝牌"
     },
     {
       "id": 3,
+      "code": "YL",
       "name": "黄牌"
     },
-    {
-      "id": 4,
-      "name": "白牌"
-    },
-    {
-      "id": 5,
-      "name": "黑牌"
-    }
+    ...
   ]
 }
 </code></pre>
@@ -144,25 +140,28 @@
   "total_count": 30,
   "items": [
     {
-      "id": 18,
-      "code": "18",
-      "name": "试验汽车号牌",
-      "ps": "",
-      "hpys": "其他"
+      "id": 1,
+      "code": "01",
+      "name": "大型汽车号牌",
+      "hpys": "黄牌",
+      "hpys_code": "YL",
+      "ps": "黄底黑字"
     },
     {
-      "id": 19,
-      "code": "19",
-      "name": "试验摩托车号牌",
-      "ps": "",
-      "hpys": "其他"
+      "id": 2,
+      "code": "02",
+      "name": "小型汽车号牌",
+      "hpys": "蓝牌",
+      "hpys_code": "BU",
+      "ps": "蓝底白字"
     },
     {
-      "id": 23,
-      "code": "23",
-      "name": "警用汽车号牌",
-      "ps": "",
-      "hpys": "其他"
+      "id": 3,
+      "code": "03",
+      "name": "使馆汽车号牌",
+      "hpys": "黑牌",
+      "hpys_code": "BK",
+      "ps": "黑底白字、红使字"
     },
     ...
   ]
@@ -205,46 +204,7 @@
       "code": "C",
       "name": "黄"
     },
-    {
-      "id": 4,
-      "code": "D",
-      "name": "粉"
-    },
-    {
-      "id": 5,
-      "code": "E",
-      "name": "红"
-    },
-    {
-      "id": 6,
-      "code": "F",
-      "name": "紫"
-    },
-    {
-      "id": 7,
-      "code": "G",
-      "name": "绿"
-    },
-    {
-      "id": 8,
-      "code": "H",
-      "name": "蓝"
-    },
-    {
-      "id": 9,
-      "code": "I",
-      "name": "棕"
-    },
-    {
-      "id": 10,
-      "code": "J",
-      "name": "黑"
-    },
-    {
-      "id": 11,
-      "code": "Z",
-      "name": "其他"
-    }
+    ...
   ]
 }
 </code></pre>
@@ -311,32 +271,20 @@
   "items": [
     {
       "id": 1,
+      "code": "QT",
       "name": "其他"
     },
     {
       "id": 2,
+      "code": "IN",
       "name": "进城"
     },
     {
       "id": 3,
+      "code": "OT",
       "name": "出城"
     },
-    {
-      "id": 4,
-      "name": "由东往西"
-    },
-    {
-      "id": 5,
-      "name": "由南往北"
-    },
-    {
-      "id": 6,
-      "name": "由西往东"
-    },
-    {
-      "id": 7,
-      "name": "由北往南"
-    }
+    ...
   ]
 }
 </code></pre>
@@ -379,11 +327,42 @@
       "config_id": 14,
       "kkbh": null
     },
+    ...
+  ]
+}
+</code></pre>
+                  </div>
+
+              <h2 id="kakou-logo-kkdd">List kkdd</h2>
+                <p>获取卡口地点列表(使用卡口编号)<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/kkdd
+                  </div>
+                </div>
+                <h3 id="kakou-logo-kkdd-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/kkdd
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "total_count": 4,
+  "items": [
     {
-      "id": 5,
-      "name": "淡水人民桥",
-      "config_id": 15,
-      "kkbh": null
+      "id": "441323003",
+      "name": "淡水海关卡口"
+    },
+    {
+      "id": "441323009",
+      "name": "新圩塘吓卡口"
+    },
+    {
+      "id": "441323007",
+      "name": "镇隆大路背卡口"
     },
     ...
   ]
@@ -408,7 +387,7 @@
                     <div class="panel-heading">Status: 200 OK</div>
 <pre><code class="json">
 {
-  "total_count": 157,
+  "total_count": 229,
   "items": [
     {
       "id": 1,
@@ -426,6 +405,7 @@
       "name": "阿斯顿马丁"
     },
     ...
+  ]
 }
 </code></pre>
                   </div>
@@ -434,7 +414,7 @@
                 <p>获取子品牌代码列表<p>
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    GET /logo/ppdm/{code}
+                    GET /logo/ppdm/:code
                   </div>
                 </div>
                 <h3 id="kakou-logo-ppdm2-example">实例</h3>
@@ -467,11 +447,55 @@
 </code></pre>
                   </div>
 
+              <h2 id="kakou-logo-ppdmall">List ppdmall</h2>
+                <p>获取所有车辆品牌代码列表<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/ppdmall
+                  </div>
+                </div>
+                <h3 id="kakou-logo-ppdmall-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/ppdmall
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "total_count": 229,
+  "items": [
+    {
+      "id": 1,
+      "code": "001",
+      "name": "奥迪",
+      "count": 17,
+      "items": [
+        {
+          "id": 1327,
+          "code": "001001",
+          "name": "奥迪100"
+        },
+        {
+          "id": 1328,
+          "code": "001002",
+          "name": "奥迪A1"
+        },
+        ...
+      ]
+    }
+    ...
+  ]
+}
+</code></pre>
+                  </div>
+
               <h2 id="kakou-logo-carinfo">Get carinfo</h2>
                 <p>获取车辆信息<p>
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    GET /logo/carinfo/{id}
+                    GET /logo/carinfo/:id
                   </div>
                 </div>
                 <h3 id="kakou-logo-carinfo-example">实例</h3>
@@ -493,18 +517,24 @@
   "ppdm2": "999999",
   "kxd": "0",
   "clpp": "本田",
+  "clpp_dtl": "本田思域-2",
   "place_id": "1",
   "place": "其他",
   "hpys_id": "2",
   "hpys": "蓝牌",
+  "hpys_code": "BU",
   "cllx_code": "K31",
   "cllx": "小型普通客车",
   "fxbh_id": "3",
   "fxbh": "出城",
-  "hpzl_code": "7",
+  "fxbh_code": "OT",
+  "hpzl_code": "02",
   "csys_code": "B",
   "csys": "灰",
-  "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400099.jpg"
+  "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=6",
+  "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400099.jpg",
+  "kkdd_id": null,
+  "kkdd": "其他"
 }
 </code></pre>
                   </div>
@@ -513,7 +543,7 @@
                 <p>根据条件获取车辆信息<p>
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    GET /logo/carinfos/q={query}{&page,per_page,sort,order}
+                    GET /logo/carinfos
                   </div>
                 </div>
                 <h3 id="kakou-logo-fresh-parameters">parameters</h3>
@@ -535,29 +565,29 @@
                         <td>q</td>
                         <td>string</td>
                         <td>查询条件, 第一个参数车牌号码。如果没有号牌号码则留空，例如：
-                        http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+place:4+fxbh:2+hpys:blue+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
+                        http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+kkdd:441323007+fxbh:IN+hpys:BU+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
                         或 http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=null
                       </td>
                       </tr>
                       <tr>
                         <td>page</td>
                         <td>int</td>
-                        <td>页数. 大于等于1或自然数.</td>
+                        <td>页数. 大于等于1整数, 默认值1.</td>
                       </tr>
                       <tr>
                         <td>per_page</td>
                         <td>int</td>
-                        <td>每页行数. 大于等于0正整数, 默认值20.</td>
+                        <td>每页行数. 正整数, 默认值20.</td>
                       </tr>
                       <tr>
                         <td>sort</td>
                         <td>string</td>
-                        <td>排序字段. id, ppdm, jgsj中的一个，默认值是id.</td>
+                        <td>排序字段. <code>id</code>, <code>ppdm</code>, <code>jgsj</code>中的一个，默认值是<code>id</code>.</td>
                       </tr>
                       <tr>
                         <td>order</td>
                         <td>string</td>
-                        <td>排序方向,条件是sort已经设置. asc or desc, 默认值desc.</td>
+                        <td>排序方向,条件是sort已经设置. <code>asc</code> or <code>desc</code>, 默认值<code>desc</code>.</td>
                       </tr>
                     </tbody>
                   </table>
@@ -568,31 +598,34 @@
                     </li>
                     <li>
                       <span class="label label-info">et</span>结束时间, 格式为yyyy-mm-dd hh:mm:ss.
-                    </li>   
+                    </li>
+                    <li>
+                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd.
+                    </li>
                     <li>
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
                     </li>
                     <li>
-                      <span class="label label-info">fxbh</span>方向id,内容是整形数值.
+                      <span class="label label-info">fxbh</span>方向,可以是fxbh_id如“2”表示“进城”，也可以使用fxbh_code如“IN”.
                     </li>
                     <li>
                       <span class="label label-info">ppdm</span>品牌代码,例如：031 or 031001.
                     </li>
                     <li>
                       <span class="label label-info">hpys</span>根据号牌颜色查询车辆信息,内容可以是
-                      <span class="label label-default">other</span>, <span class="label label-default">blue</span>, <span class="label label-default">yellow</span>, <span class="label label-default">white</span>or<span class="label label-default">black</span>.
+                      <code>QT</code>, <code>BU</code>, <code>YL</code>, <code>WT</code> or <code>BK</code>.
                       以下是等价的参数
-                      <span class="label label-default">other</span>=<span class="label label-default">其他</span>=<span class="label label-default">1</span>,
-                      <span class="label label-default">blue</span>=<span class="label label-default">蓝</span>=<span class="label label-default">2</span>,
-                      <span class="label label-default">yellow</span>=<span class="label label-default">黄</span>=<span class="label label-default">3</span>,
-                      <span class="label label-default">white</span>=<span class="label label-default">白</span>=<span class="label label-default">4</span>,
-                      <span class="label label-default">black</span>=<span class="label label-default">黑</span>=<span class="label label-default">5</span>.
+                      <code>other</code>=<code>其他</code>=<code>1</code>=<code>QT</code>,
+                      <code>blue</code>=<code>蓝</code>=<code>2</code>=<code>BU</code>,
+                      <code>yellow</code>=<code>黄</code>=<code>3</code>=<code>YL</code>,
+                      <code>white</code>=<code>白</code>=<code>4</code>=<code>WT</code>,
+                      <code>black</code>=<code>黑</code>=<code>5</code>=<code>BK</code>.
                     </li>
                   </ul>
                 <h3 id="kakou-logo-carinfos-example">example</h3>
                   <div class="panel panel-default">
                     <div class="panel-body">
-                      http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=粤LD%+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+place:4+fxbh:2+hpys:blue+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
+                      http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=粤LD%+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+kkdd:441323007+fxbh:IN+hpys:BU+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
                     </div>
                   </div>
                   <div class="panel panel-default">
@@ -611,18 +644,24 @@
       "ppdm2": "114003",
       "kxd": "65",
       "clpp": "五菱",
+      "clpp_dtl": "五菱之光-2005款",
       "place_id": "4",
       "place": "镇隆大路背卡口",
       "hpys_id": "2",
       "hpys": "蓝牌",
+      "hpys_code": "BU",
       "cllx_code": "K31",
       "cllx": "小型普通客车",
       "fxbh_id": "2",
       "fxbh": "进城",
+      "fxbh_code": "IN",
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg"
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13363659",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg",
+      "kkdd_id": "441323007",
+      "kkdd": "镇隆大路背卡口"
     },
     {
       "id": "13366038",
@@ -634,18 +673,24 @@
       "ppdm2": "114003",
       "kxd": "65",
       "clpp": "五菱",
+      "clpp_dtl": "五菱之光-2005款",
       "place_id": "4",
       "place": "镇隆大路背卡口",
       "hpys_id": "2",
       "hpys": "蓝牌",
+      "hpys_code": "BU",
       "cllx_code": "K31",
       "cllx": "小型普通客车",
       "fxbh_id": "2",
       "fxbh": "进城",
+      "fxbh_code": "IN",
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg"
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13366038",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg",
+      "kkdd_id": "441323007",
+      "kkdd": "镇隆大路背卡口"
     },
     {
       "id": "13364469",
@@ -657,18 +702,24 @@
       "ppdm2": "114003",
       "kxd": "69",
       "clpp": "五菱",
+      "clpp_dtl": "五菱之光-2005款",
       "place_id": "4",
       "place": "镇隆大路背卡口",
       "hpys_id": "2",
       "hpys": "蓝牌",
+      "hpys_code": "BU",
       "cllx_code": "K31",
       "cllx": "小型普通客车",
       "fxbh_id": "2",
       "fxbh": "进城",
+      "fxbh_code": "IN",
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg"
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13364469",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg",
+      "kkdd_id": "441323007",
+      "kkdd": "镇隆大路背卡口"
     },
     {
       "id": "13366848",
@@ -680,18 +731,24 @@
       "ppdm2": "114003",
       "kxd": "69",
       "clpp": "五菱",
+      "clpp_dtl": "五菱之光-2005款",
       "place_id": "4",
       "place": "镇隆大路背卡口",
       "hpys_id": "2",
       "hpys": "蓝牌",
+      "hpys_code": "BU",
       "cllx_code": "K31",
       "cllx": "小型普通客车",
       "fxbh_id": "2",
       "fxbh": "进城",
+      "fxbh_code": "IN",
       "hpzl_code": "02",
       "csys_code": "A",
       "csys": "白",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg"
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13366848",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg",
+      "kkdd_id": "441323007",
+      "kkdd": "镇隆大路背卡口"
     }
   ]
 }
@@ -729,16 +786,19 @@
                   <p>请求参数<span class="label label-primary">q</span>可以是下列组合</p>
                   <ul>
                     <li>
+                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd.
+                    </li>
+                    <li>
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
                     </li>
                     <li>
-                      <span class="label label-info">fxbh</span>方向id,内容是整形数值.
+                      <span class="label label-info">fxbh</span>方向,可以是fxbh_id如“2”表示“进城”，也可以使用fxbh_code如“IN”.
                     </li>
                   </ul>
                 <h3 id="kakou-logo-fresh-example">example</h3>
                   <div class="panel panel-default">
                     <div class="panel-body">
-                      https://127.0.0.1/rest_kakou/index.php/v1/logo/fresh?q=1+place:4+fxbh:2
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/fresh?q=1+kkdd:441323007+fxbh:IN
                     </div>
                   </div>
                   <div class="panel panel-default">
@@ -757,18 +817,24 @@
       "ppdm2": "999999",
       "kxd": "0",
       "clpp": "其他",
+      "clpp_dtl": "其他",
       "place_id": "4",
       "place": "镇隆大路背卡口",
       "hpys_id": "1",
       "hpys": "其他",
+      "hpys_code": "QT",
       "cllx_code": "Q",
       "cllx": "其他",
       "fxbh_id": "2",
       "fxbh": "进城",
+      "fxbh_code": "IN",
       "hpzl_code": "99",
       "csys_code": "Z",
       "csys": "其他",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185800029.jpg"
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13367202",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185800029.jpg",
+      "kkdd_id": "441323007",
+      "kkdd": "镇隆大路背卡口"
     },
     {
       "id": "13367201",
@@ -779,19 +845,25 @@
       "ppdm": "010",
       "ppdm2": "010014",
       "kxd": "67",
-      "clpp": "本田CRV-5",
+      "clpp": "本田",
+      "clpp_dtl": "本田CRV-5",
       "place_id": "4",
       "place": "镇隆大路背卡口",
       "hpys_id": "1",
       "hpys": "其他",
+      "hpys_code": "QT",
       "cllx_code": "Q",
       "cllx": "其他",
       "fxbh_id": "2",
       "fxbh": "进城",
+      "fxbh_code": "IN",
       "hpzl_code": "99",
       "csys_code": "Z",
       "csys": "其他",
-      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185700028.jpg"
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13367201",
+      "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185700028.jpg",
+      "kkdd_id": "441323007",
+      "kkdd": "镇隆大路背卡口"
     }
   ]
 }
@@ -812,8 +884,10 @@
                   <li><a href="#kakou-logo-cllx">List cllx</a></li>
                   <li><a href="#kakou-logo-fxbh">List fxbh</a></li>
                   <li><a href="#kakou-logo-place">List place</a></li>
+                  <li><a href="#kakou-logo-kkdd">List kkdd</a></li>
                   <li><a href="#kakou-logo-ppdm">List ppdm</a></li>
                   <li><a href="#kakou-logo-ppdm2">Get ppdm</a></li>
+                  <li><a href="#kakou-logo-ppdmall">List ppdmall</a></li>
                   <li><a href="#kakou-logo-carinfo">Get carinfo</a></li>
                   <li><a href="#kakou-logo-carinfos">List carinfos</a></li>
                   <li><a href="#kakou-logo-fresh">Get fresh</a></li>
