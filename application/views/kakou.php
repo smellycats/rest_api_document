@@ -327,12 +327,6 @@
       "config_id": 14,
       "kkbh": null
     },
-    {
-      "id": 5,
-      "name": "淡水人民桥",
-      "config_id": 15,
-      "kkbh": null
-    },
     ...
   ]
 }
@@ -539,7 +533,7 @@
   "csys": "灰",
   "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=6",
   "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400099.jpg",
-  "kkdd_id": 1,
+  "kkdd_id": null,
   "kkdd": "其他"
 }
 </code></pre>
@@ -571,7 +565,7 @@
                         <td>q</td>
                         <td>string</td>
                         <td>查询条件, 第一个参数车牌号码。如果没有号牌号码则留空，例如：
-                        http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+place:4+fxbh:2+hpys:blue+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
+                        http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+kkdd:441323007+fxbh:IN+hpys:BU+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
                         或 http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=null
                       </td>
                       </tr>
@@ -604,7 +598,10 @@
                     </li>
                     <li>
                       <span class="label label-info">et</span>结束时间, 格式为yyyy-mm-dd hh:mm:ss.
-                    </li>   
+                    </li>
+                    <li>
+                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd.
+                    </li>
                     <li>
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
                     </li>
@@ -616,7 +613,7 @@
                     </li>
                     <li>
                       <span class="label label-info">hpys</span>根据号牌颜色查询车辆信息,内容可以是
-                      <code>other</code>, <code>blue</code>, <code>yellow</code>, <code>white</code> or <code>black</code>.
+                      <code>QT</code>, <code>BU</code>, <code>YL</code>, <code>WT</code> or <code>BK</code>.
                       以下是等价的参数
                       <code>other</code>=<code>其他</code>=<code>1</code>=<code>QT</code>,
                       <code>blue</code>=<code>蓝</code>=<code>2</code>=<code>BU</code>,
@@ -628,7 +625,7 @@
                 <h3 id="kakou-logo-carinfos-example">example</h3>
                   <div class="panel panel-default">
                     <div class="panel-body">
-                      http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=粤LD%+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+place:4+fxbh:2+hpys:blue+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
+                      http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=粤LD%+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+kkdd:441323007+fxbh:IN+hpys:BU+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
                     </div>
                   </div>
                   <div class="panel panel-default">
@@ -663,7 +660,7 @@
       "csys": "白",
       "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13363659",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg",
-      "kkdd_id": 4,
+      "kkdd_id": "441323007",
       "kkdd": "镇隆大路背卡口"
     },
     {
@@ -692,7 +689,7 @@
       "csys": "白",
       "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13366038",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23192300053.jpg",
-      "kkdd_id": 4,
+      "kkdd_id": "441323007",
       "kkdd": "镇隆大路背卡口"
     },
     {
@@ -721,7 +718,7 @@
       "csys": "白",
       "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13364469",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg",
-      "kkdd_id": 4,
+      "kkdd_id": "441323007",
       "kkdd": "镇隆大路背卡口"
     },
     {
@@ -750,7 +747,7 @@
       "csys": "白",
       "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13366848",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23434500031.jpg",
-      "kkdd_id": 4,
+      "kkdd_id": "441323007",
       "kkdd": "镇隆大路背卡口"
     }
   ]
@@ -789,6 +786,9 @@
                   <p>请求参数<span class="label label-primary">q</span>可以是下列组合</p>
                   <ul>
                     <li>
+                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd.
+                    </li>
+                    <li>
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
                     </li>
                     <li>
@@ -798,7 +798,7 @@
                 <h3 id="kakou-logo-fresh-example">example</h3>
                   <div class="panel panel-default">
                     <div class="panel-body">
-                      https://127.0.0.1/rest_kakou/index.php/v1/logo/fresh?q=1+place:4+fxbh:2
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/fresh?q=1+kkdd:441323007+fxbh:IN
                     </div>
                   </div>
                   <div class="panel panel-default">
@@ -833,7 +833,7 @@
       "csys": "其他",
       "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13367202",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185800029.jpg",
-      "kkdd_id": 4,
+      "kkdd_id": "441323007",
       "kkdd": "镇隆大路背卡口"
     },
     {
@@ -862,7 +862,7 @@
       "csys": "其他",
       "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=13367201",
       "imgurl": "http://127.0.0.1/SpreadDataH/ImageFile/2015/05/26/23/hdk09/23185700028.jpg",
-      "kkdd_id": 4,
+      "kkdd_id": "441323007",
       "kkdd": "镇隆大路背卡口"
     }
   ]
