@@ -149,25 +149,28 @@
   "total_count": 30,
   "items": [
     {
-      "id": 18,
-      "code": "18",
-      "name": "试验汽车号牌",
-      "ps": "",
-      "hpys": "其他"
+      "id": 1,
+      "code": "01",
+      "name": "大型汽车号牌",
+      "hpys": "黄牌",
+      "hpys_code": "YL",
+      "ps": "黄底黑字"
     },
     {
-      "id": 19,
-      "code": "19",
-      "name": "试验摩托车号牌",
-      "ps": "",
-      "hpys": "其他"
+      "id": 2,
+      "code": "02",
+      "name": "小型汽车号牌",
+      "hpys": "蓝牌",
+      "hpys_code": "BU",
+      "ps": "蓝底白字"
     },
     {
-      "id": 23,
-      "code": "23",
-      "name": "警用汽车号牌",
-      "ps": "",
-      "hpys": "其他"
+      "id": 3,
+      "code": "03",
+      "name": "使馆汽车号牌",
+      "hpys": "黑牌",
+      "hpys_code": "BK",
+      "ps": "黑底白字、红使字"
     },
     ...
   ]
@@ -476,6 +479,7 @@
       "name": "阿斯顿马丁"
     },
     ...
+  ]
 }
 </code></pre>
                   </div>
@@ -535,14 +539,12 @@
 <pre><code class="json">
 {
   "total_count": 229,
-  "items":
-  [
+  "items": [
     {
       "id": 1,
       "code": "001",
       "name": "奥迪",
-      "items":
-      [
+      "items": [
         {
           "id": 1327,
           "code": "001001",
@@ -553,7 +555,11 @@
           "code": "001002",
           "name": "奥迪A1"
         },
+        ...
+      ]
+    }
     ...
+  ]
 }
 </code></pre>
                   </div>
