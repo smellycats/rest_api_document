@@ -405,7 +405,7 @@
                   </div>
 
               <h2 id="kakou-logo-kkdd">List kkdd</h2>
-                <p>获取卡口地点列表(同List place)<p>
+                <p>获取卡口地点列表(使用卡口编号)<p>
                 <div class="panel panel-default">
                   <div class="panel-body">
                     GET /logo/kkdd
@@ -416,6 +416,29 @@
                     <div class="panel-body">
                       https://127.0.0.1/rest_kakou/index.php/v1/logo/kkdd
                     </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "total_count": 4,
+  "items": [
+    {
+      "id": "441323003",
+      "name": "淡水海关卡口"
+    },
+    {
+      "id": "441323009",
+      "name": "新圩塘吓卡口"
+    },
+    {
+      "id": "441323007",
+      "name": "镇隆大路背卡口"
+    },
+    ...
+  ]
+}
+</code></pre>
                   </div>
 
               <h2 id="kakou-logo-ppdm">List ppdm</h2>
@@ -489,6 +512,47 @@
       "code": "001003",
       "name": "奥迪A3"
     },
+    ...
+}
+</code></pre>
+                  </div>
+
+              <h2 id="kakou-logo-ppdmall">List ppdmall</h2>
+                <p>获取所有车辆品牌代码列表<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/ppdmall
+                  </div>
+                </div>
+                <h3 id="kakou-logo-ppdmall-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/ppdmall
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "total_count": 229,
+  "items":
+  [
+    {
+      "id": 1,
+      "code": "001",
+      "name": "奥迪",
+      "items":
+      [
+        {
+          "id": 1327,
+          "code": "001001",
+          "name": "奥迪100"
+        },
+        {
+          "id": 1328,
+          "code": "001002",
+          "name": "奥迪A1"
+        },
     ...
 }
 </code></pre>
@@ -884,6 +948,7 @@
                   <li><a href="#kakou-logo-kkdd">List kkdd</a></li>
                   <li><a href="#kakou-logo-ppdm">List ppdm</a></li>
                   <li><a href="#kakou-logo-ppdm2">Get ppdm</a></li>
+                  <li><a href="#kakou-logo-ppdmall">List ppdmall</a></li>
                   <li><a href="#kakou-logo-carinfo">Get carinfo</a></li>
                   <li><a href="#kakou-logo-carinfos">List carinfos</a></li>
                   <li><a href="#kakou-logo-fresh">Get fresh</a></li>
