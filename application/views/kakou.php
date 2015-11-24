@@ -315,45 +315,25 @@
                     <div class="panel-heading">Status: 200 OK</div>
 <pre><code class="json">
 {
-    "total_count": 7,
-    "items":
-    [
-        {
-            "id": 1,
-            "code": "QT",
-            "name": "其他"
-        },
-        {
-            "id": 2,
-            "code": "IN",
-            "name": "进城"
-        },
-        {
-            "id": 3,
-            "code": "OT",
-            "name": "出城"
-        },
-        {
-            "id": 4,
-            "code": "EW",
-            "name": "由东往西"
-        },
-        {
-            "id": 5,
-            "code": "SN",
-            "name": "由南往北"
-        },
-        {
-            "id": 6,
-            "code": "WE",
-            "name": "由西往东"
-        },
-        {
-            "id": 7,
-            "code": "NS",
-            "name": "由北往南"
-        }
-    ]
+  "total_count": 7,
+  "items": [
+    {
+      "id": 1,
+      "code": "QT",
+      "name": "其他"
+    },
+    {
+      "id": 2,
+      "code": "IN",
+      "name": "进城"
+    },
+    {
+      "id": 3,
+      "code": "OT",
+      "name": "出城"
+    },
+    ...
+  ]
 }
 </code></pre>
                   </div>
