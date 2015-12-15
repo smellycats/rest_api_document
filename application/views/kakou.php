@@ -648,7 +648,7 @@
                       <span class="label label-info">et</span>结束时间, 格式为yyyy-mm-dd hh:mm:ss.
                     </li>
                     <li>
-                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd.
+                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd. kkdd可以是多个值表示多个卡口地点,如：q=+kkdd:441323007+kkdd:441323008.
                     </li>
                     <li>
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
@@ -673,7 +673,7 @@
                 <h3 id="kakou-logo-carinfos-example">example</h3>
                   <div class="panel panel-default">
                     <div class="panel-body">
-                      http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=粤LD%+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+kkdd:441323007+fxbh:IN+hpys:BU+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
+                      http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=粤LD%+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+kkdd:441323007+kkdd:441323008+fxbh:IN+hpys:BU+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
                     </div>
                   </div>
                   <div class="panel panel-default">
@@ -834,7 +834,7 @@
                   <p>请求参数<span class="label label-primary">q</span>可以是下列组合</p>
                   <ul>
                     <li>
-                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd.
+                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd. kkdd可以是多个值表示多个卡口地点,如：q=+kkdd:441323007+kkdd:441323008.
                     </li>
                     <li>
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
@@ -846,7 +846,7 @@
                 <h3 id="kakou-logo-fresh-example">example</h3>
                   <div class="panel panel-default">
                     <div class="panel-body">
-                      https://127.0.0.1/rest_kakou/index.php/v1/logo/fresh?q=1+kkdd:441323007+fxbh:IN
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/fresh?q=1+kkdd:441323007+kkdd:441323008+fxbh:IN
                     </div>
                   </div>
                   <div class="panel panel-default">
