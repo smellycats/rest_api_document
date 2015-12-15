@@ -539,6 +539,54 @@
 </code></pre>
                   </div>
 
+              <h2 id="kakou-logo-carinfo2">Get carinfo2</h2>
+                <p>根据cltx表id获取车辆信息<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/carinfo2/:id
+                  </div>
+                </div>
+                <h3 id="kakou-logo-carinfo2-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/carinfo2/2
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "id": "6",
+  "jgsj": "2015-05-21 23:13:35",
+  "hphm": "粤L12345",
+  "cltx_id": "2",
+  "cdbh": "2",
+  "ppdm": "010",
+  "ppdm2": "999999",
+  "kxd": "0",
+  "clpp": "本田",
+  "clpp_dtl": "本田思域-2",
+  "place_id": "1",
+  "place": "其他",
+  "hpys_id": "2",
+  "hpys": "蓝牌",
+  "hpys_code": "BU",
+  "cllx_code": "K31",
+  "cllx": "小型普通客车",
+  "fxbh_id": "3",
+  "fxbh": "出城",
+  "fxbh_code": "OT",
+  "hpzl_code": "02",
+  "csys_code": "B",
+  "csys": "灰",
+  "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=6",
+  "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400099.jpg",
+  "kkdd_id": null,
+  "kkdd": "其他"
+}
+</code></pre>
+                  </div>
+
               <h2 id="kakou-logo-carinfos">List carinfos</h2>
                 <p>根据条件获取车辆信息<p>
                 <div class="panel panel-default">
@@ -869,6 +917,28 @@
 }
 </code></pre>
                   </div>
+
+              <h2 id="kakou-logo-maxid">Get maxid</h2>
+                <p>获取carinfo表最大id<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/maxid
+                  </div>
+                </div>
+                <h3 id="kakou-logo-maxid-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/maxid
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "maxid": 456
+}
+</code></pre>
+                  </div>
           </div>
         </div>
 
@@ -889,8 +959,16 @@
                   <li><a href="#kakou-logo-ppdm2">Get ppdm</a></li>
                   <li><a href="#kakou-logo-ppdmall">List ppdmall</a></li>
                   <li><a href="#kakou-logo-carinfo">Get carinfo</a></li>
+                  <li><a href="#kakou-logo-carinfo2">Get carinfo2</a></li>
                   <li><a href="#kakou-logo-carinfos">List carinfos</a></li>
                   <li><a href="#kakou-logo-fresh">Get fresh</a></li>
+                  <li><a href="#kakou-logo-maxid">Get maxid</a></li>
+                </ul>
+                <a href="#kakou-cltx">车辆查询</a>
+                <ul class="nav">
+                  <li><a href="#kakou-cltx-cltx">Get cltx</a></li>
+                  <li><a href="#kakou-cltx-cltxs">List cltx</a></li>
+                  <li><a href="#kakou-cltx-maxid">Get maxid</a></li>
                 </ul>
               </li>
             </ul>
