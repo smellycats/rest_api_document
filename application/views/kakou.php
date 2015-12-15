@@ -940,7 +940,104 @@
 </code></pre>
                   </div>
           </div>
+
+          <div class="bs-docs-section">
+            <h1 id="kakou-cltx" class="page-header">车辆查询</h1>
+
+              <h2 id="kakou-cltx-cltx">Get cltx</h2>
+                <p>根据id获取cltx表信息<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /cltx/cltx/:id
+                  </div>
+                </div>
+                <h3 id="kakou-cltx-cltx-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/cltx/cltx/2
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "id": 2,
+  "jgsj": "2015-05-21 23:13:35",
+  "hphm": "粤L12345",
+  "cdbh": 2,
+  "hpys": "蓝牌",
+  "hpys_code": "BU",
+  "fxbh": "出城",
+  "fxbh_code": "OT",
+  "hpzl_code": "02",
+  "clbj": "B",
+  "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=2",
+  "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400099.jpg",
+  "kkdd_id": "441323001",
+  "kkdd": "稔山镇（大埔坉）"
+}
+</code></pre>
+                  </div>
+
+              <h2 id="kakou-cltx-cltxs">List cltxs</h2>
+                <p>根据id范围获取cltx表信息<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /cltx/cltx/:id/:last_id
+                  </div>
+                </div>
+                <h3 id="kakou-cltx-cltxs-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/cltx/cltx/2/4
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "total_count": 2,
+  "items": [
+    {
+      "id": 3,
+      "jgsj": "2015-05-21 23:13:35",
+      "hphm": "粤L12345",
+      "cdbh": 2,
+      "hpys": "蓝牌",
+      "hpys_code": "BU",
+      "fxbh": "出城",
+      "fxbh_code": "OT",
+      "hpzl_code": "02",
+      "clbj": "B",
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=3",
+      "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400234.jpg",
+      "kkdd_id": "441323001",
+      "kkdd": "稔山镇（大埔坉）"
+    },
+    {
+      "id": 4,
+      "jgsj": "2015-05-21 23:13:40",
+      "hphm": "粤L54321",
+      "cdbh": 2,
+      "hpys": "蓝牌",
+      "hpys_code": "BU",
+      "fxbh": "出城",
+      "fxbh_code": "OT",
+      "hpzl_code": "02",
+      "clbj": "B",
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=4",
+      "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/233354000123.jpg",
+      "kkdd_id": "441323001",
+      "kkdd": "稔山镇（大埔坉）"
+    }
+  ]
+}
+</code></pre>
+                  </div>
+
+          </div>
         </div>
+
 
         <div class="col-md-4" role="complementary">
           <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
@@ -967,7 +1064,7 @@
                 <a href="#kakou-cltx">车辆查询</a>
                 <ul class="nav">
                   <li><a href="#kakou-cltx-cltx">Get cltx</a></li>
-                  <li><a href="#kakou-cltx-cltxs">List cltx</a></li>
+                  <li><a href="#kakou-cltx-cltxs">List cltxs</a></li>
                   <li><a href="#kakou-cltx-maxid">Get maxid</a></li>
                 </ul>
               </li>
