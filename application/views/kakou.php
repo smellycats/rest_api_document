@@ -840,7 +840,7 @@
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
                     </li>
                     <li>
-                      <span class="label label-info">fxbh</span>方向,可以是fxbh_id如“2”表示“进城”，也可以使用fxbh_code如“IN”.
+                      <span class="label label-info">fxbh</span>方向,可以是fxbh_id,如“2”表示“进城”，也可以使用fxbh_code,如“IN”.
                     </li>
                   </ul>
                 <h3 id="kakou-logo-fresh-example">example</h3>
