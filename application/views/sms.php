@@ -49,7 +49,7 @@
       <nav id="bs-navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <?php foreach($this->config->item('menu') as $row): ?>
-          <li <?php if ($row['name'] == 'cgs'){echo 'class="active"'; }?>>
+          <li <?php if ($row['name'] == 'sms'){echo 'class="active"'; }?>>
             <a href="<?php echo site_url($row['name']); ?>"><?php echo $row['cname']; ?></a>
           </li>
           <?php endforeach; ?>
