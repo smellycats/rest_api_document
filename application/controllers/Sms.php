@@ -20,6 +20,11 @@ class SMS extends Admin_Controller
         parent::__construct();
     }
 
+    /**
+     * 短信服务 index
+     * 
+     * @return void
+     */
     public function index()
     {
         $this->load->view('sms');

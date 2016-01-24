@@ -539,6 +539,54 @@
 </code></pre>
                   </div>
 
+              <h2 id="kakou-logo-carinfo2">Get carinfo2</h2>
+                <p>根据cltx表id获取车辆信息<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/carinfo2/:id
+                  </div>
+                </div>
+                <h3 id="kakou-logo-carinfo2-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/carinfo2/2
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "id": "6",
+  "jgsj": "2015-05-21 23:13:35",
+  "hphm": "粤L12345",
+  "cltx_id": "2",
+  "cdbh": "2",
+  "ppdm": "010",
+  "ppdm2": "999999",
+  "kxd": "0",
+  "clpp": "本田",
+  "clpp_dtl": "本田思域-2",
+  "place_id": "1",
+  "place": "其他",
+  "hpys_id": "2",
+  "hpys": "蓝牌",
+  "hpys_code": "BU",
+  "cllx_code": "K31",
+  "cllx": "小型普通客车",
+  "fxbh_id": "3",
+  "fxbh": "出城",
+  "fxbh_code": "OT",
+  "hpzl_code": "02",
+  "csys_code": "B",
+  "csys": "灰",
+  "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=6",
+  "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400099.jpg",
+  "kkdd_id": null,
+  "kkdd": "其他"
+}
+</code></pre>
+                  </div>
+
               <h2 id="kakou-logo-carinfos">List carinfos</h2>
                 <p>根据条件获取车辆信息<p>
                 <div class="panel panel-default">
@@ -600,7 +648,7 @@
                       <span class="label label-info">et</span>结束时间, 格式为yyyy-mm-dd hh:mm:ss.
                     </li>
                     <li>
-                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd.
+                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd. kkdd可以是多个值表示多个卡口地点,如：q=+kkdd:441323007+kkdd:441323008.
                     </li>
                     <li>
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
@@ -625,7 +673,7 @@
                 <h3 id="kakou-logo-carinfos-example">example</h3>
                   <div class="panel panel-default">
                     <div class="panel-body">
-                      http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=粤LD%+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+kkdd:441323007+fxbh:IN+hpys:BU+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
+                      http://127.0.0.1/rest_kakou/index.php/v1/logo/carinfos?q=粤LD%+st:2015-05-26 2012:34:56+et:2015-05-27 2012:34:56+kkdd:441323007+kkdd:441323008+fxbh:IN+hpys:BU+ppdm:114&page=1&per_page=20&sort=ppdm&order=desc
                     </div>
                   </div>
                   <div class="panel panel-default">
@@ -786,19 +834,19 @@
                   <p>请求参数<span class="label label-primary">q</span>可以是下列组合</p>
                   <ul>
                     <li>
-                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd.
+                      <span class="label label-info">kkdd</span>卡口地点编号,如441323001.此字段和place等价,如果查询条件同时有kkdd和place则系统默认使用kkdd. kkdd可以是多个值表示多个卡口地点,如：q=+kkdd:441323007+kkdd:441323008.
                     </li>
                     <li>
                       <span class="label label-info">place</span>卡口地点id,内容是整形数值.
                     </li>
                     <li>
-                      <span class="label label-info">fxbh</span>方向,可以是fxbh_id如“2”表示“进城”，也可以使用fxbh_code如“IN”.
+                      <span class="label label-info">fxbh</span>方向,可以是fxbh_id,如“2”表示“进城”，也可以使用fxbh_code,如“IN”.
                     </li>
                   </ul>
                 <h3 id="kakou-logo-fresh-example">example</h3>
                   <div class="panel panel-default">
                     <div class="panel-body">
-                      https://127.0.0.1/rest_kakou/index.php/v1/logo/fresh?q=1+kkdd:441323007+fxbh:IN
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/fresh?q=1+kkdd:441323007+kkdd:441323008+fxbh:IN
                     </div>
                   </div>
                   <div class="panel panel-default">
@@ -869,8 +917,127 @@
 }
 </code></pre>
                   </div>
+
+              <h2 id="kakou-logo-maxid">Get maxid</h2>
+                <p>获取carinfo表最大id<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /logo/maxid
+                  </div>
+                </div>
+                <h3 id="kakou-logo-maxid-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/logo/maxid
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "maxid": 456
+}
+</code></pre>
+                  </div>
+          </div>
+
+          <div class="bs-docs-section">
+            <h1 id="kakou-cltx" class="page-header">车辆查询</h1>
+
+              <h2 id="kakou-cltx-cltx">Get cltx</h2>
+                <p>根据id获取cltx表信息<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /cltx/cltx/:id
+                  </div>
+                </div>
+                <h3 id="kakou-cltx-cltx-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/cltx/cltx/2
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "id": 2,
+  "jgsj": "2015-05-21 23:13:35",
+  "hphm": "粤L12345",
+  "cdbh": 2,
+  "hpys": "蓝牌",
+  "hpys_code": "BU",
+  "fxbh": "出城",
+  "fxbh_code": "OT",
+  "hpzl_code": "02",
+  "clbj": "B",
+  "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=2",
+  "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400099.jpg",
+  "kkdd_id": "441323001",
+  "kkdd": "稔山镇（大埔坉）"
+}
+</code></pre>
+                  </div>
+
+              <h2 id="kakou-cltx-cltxs">List cltxs</h2>
+                <p>根据id范围获取cltx表信息<p>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    GET /cltx/cltx/:id/:last_id
+                  </div>
+                </div>
+                <h3 id="kakou-cltx-cltxs-example">实例</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      https://127.0.0.1/rest_kakou/index.php/v1/cltx/cltx/2/4
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Status: 200 OK</div>
+<pre><code class="json">
+{
+  "total_count": 2,
+  "items": [
+    {
+      "id": 3,
+      "jgsj": "2015-05-21 23:13:35",
+      "hphm": "粤L12345",
+      "cdbh": 2,
+      "hpys": "蓝牌",
+      "hpys_code": "BU",
+      "fxbh": "出城",
+      "fxbh_code": "OT",
+      "hpzl_code": "02",
+      "clbj": "B",
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=3",
+      "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/23335400234.jpg",
+      "kkdd_id": "441323001",
+      "kkdd": "稔山镇（大埔坉）"
+    },
+    {
+      "id": 4,
+      "jgsj": "2015-05-21 23:13:40",
+      "hphm": "粤L54321",
+      "cdbh": 2,
+      "hpys": "蓝牌",
+      "hpys_code": "BU",
+      "fxbh": "出城",
+      "fxbh_code": "OT",
+      "hpzl_code": "02",
+      "clbj": "B",
+      "thumb_url": "http://127.0.0.1/rest_kakou/index.php/v1/img/thumb?id=4",
+      "imgurl": "http://127.0.0.1/SpreadDataE/ImageFile/2015/05/26/23/hdk01/233354000123.jpg",
+      "kkdd_id": "441323001",
+      "kkdd": "稔山镇（大埔坉）"
+    }
+  ]
+}
+</code></pre>
+                  </div>
+
           </div>
         </div>
+
 
         <div class="col-md-4" role="complementary">
           <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
@@ -889,8 +1056,16 @@
                   <li><a href="#kakou-logo-ppdm2">Get ppdm</a></li>
                   <li><a href="#kakou-logo-ppdmall">List ppdmall</a></li>
                   <li><a href="#kakou-logo-carinfo">Get carinfo</a></li>
+                  <li><a href="#kakou-logo-carinfo2">Get carinfo2</a></li>
                   <li><a href="#kakou-logo-carinfos">List carinfos</a></li>
                   <li><a href="#kakou-logo-fresh">Get fresh</a></li>
+                  <li><a href="#kakou-logo-maxid">Get maxid</a></li>
+                </ul>
+                <a href="#kakou-cltx">车辆查询</a>
+                <ul class="nav">
+                  <li><a href="#kakou-cltx-cltx">Get cltx</a></li>
+                  <li><a href="#kakou-cltx-cltxs">List cltxs</a></li>
+                  <li><a href="#kakou-cltx-maxid">Get maxid</a></li>
                 </ul>
               </li>
             </ul>
